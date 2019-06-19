@@ -16,7 +16,7 @@ Next, build both Sia and Sia-Ant-Farm, and ensure that `sia-antfarm` and `siac` 
 
 The actual sia daemon is used by the antfarm is a slightly modified version of siad built into Sia-Ant-Farm, which will take care of adding the necessary dev tags to the build.
 
-Once both binaries are in your path, simply run `setup.sh` to launch a local sia cluster for testing. It can take a few minutes to get everything started.
+Once both binaries are in your path, simply run `setup.sh <num_nodes>` to launch a local sia cluster for testing. It can take a few minutes to get everything started.
 
 
 ### form_contracts.sh

@@ -13,6 +13,10 @@ DOMAIN="$local_ip"
 DOMAIN="pewter.cst"
 
 HOSTNUM=6
+if [[ X"$1" != X ]]
+then
+    HOSTNUM=$1
+fi
 
 echo "Usage: $0 [number_of_nodes]"
 echo "Once ant farm is running, type 'exit' to kill it"
@@ -101,7 +105,7 @@ main() {
     siac hostdb -v
 }
 
-main $1
+main $HOSTNUM
 
 while read line
 do
