@@ -12,12 +12,11 @@ The tricky first step is determining how your tests hosts will announce themselv
 
 Depending on your network setup, you may already have 2. If you need to use route 1, patch `staticVerifyAnnouncementAddress()` in `modules/host/announce.go` to always return nil.
 
-Next, build both Sia and Sia-Ant-Farm, and ensure that `sia-antfarm` and `siac` are in your path by running `make install` in both directories.
-
-The actual sia daemon is used by the antfarm is a slightly modified version of siad built into Sia-Ant-Farm, which will take care of adding the necessary dev tags to the build.
+Next, build both Sia and Sia-Ant-Farm, and ensure that `sia-antfarm` and `siac` are in your path by running `make install` in sia-antfarm and `make dev` in Sia both directories.
 
 Once both binaries are in your path, simply run `setup.sh <num_nodes>` to launch a local sia cluster for testing. It can take a few minutes to get everything started.
 
+In another terminal, you can now run `siac` and use the api as much as you want, against the default port 9980
 
 ### form_contracts.sh
 Just a saved one-liner for use in `us` development. Build `https://github.com/lukechampine/us` and make sure `user` is in your path, and this script will form a contract with every host in you know about. This is really only for use with test clusters as it would cost a ton otherwise.
